@@ -67,12 +67,20 @@ fun Application.configureRouting() = withKoin {
                     route("/active") {
                         post {
                             val sessionQueue: SessionQueue by inject()
-                            sessionQueue.startLesson(call.getLessonInstanceId())
+                            val lessonInstanceId = call.getLessonInstanceId()
+                            if (LessonInstanceTable.instanceExists(lessonInstanceId)) {
+                                sessionQueue.startLesson(lessonInstanceId)
+                                call.respond(HttpStatusCode.OK)
+                            } else throw NotFoundException()
                         }
 
                         delete {
                             val sessionQueue: SessionQueue by inject()
-                            sessionQueue.endLesson(call.getLessonInstanceId())
+                            val lessonInstanceId = call.getLessonInstanceId()
+                            if (LessonInstanceTable.instanceExists(lessonInstanceId)) {
+                                sessionQueue.endLesson(lessonInstanceId)
+                                call.respond(HttpStatusCode.OK)
+                            } else throw NotFoundException()
                         }
                     }
 
@@ -82,6 +90,8 @@ fun Application.configureRouting() = withKoin {
                             val sessionQueue: SessionQueue by inject()
 
                             sessionQueue.changePage(call.getLessonInstanceId(), newPage)
+
+                            call.respond(HttpStatusCode.OK)
                         }
                     }
                 }

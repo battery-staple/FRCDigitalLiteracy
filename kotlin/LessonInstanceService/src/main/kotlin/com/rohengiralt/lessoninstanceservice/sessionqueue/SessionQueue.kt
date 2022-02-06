@@ -10,6 +10,7 @@ import kotlinx.serialization.json.Json
 class SessionQueue {
     private val factory = ConnectionFactory().apply {
         host = generalConfig[sessionQueueURL]
+        println("Connecting to SessionQueue with host $host and port $port")
     }
 
     private val connection = factory.newConnection()

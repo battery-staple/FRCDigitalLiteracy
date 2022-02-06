@@ -9,7 +9,4 @@ class WordPairLessonInstanceIdGenerator : LessonInstanceIdGenerator {
 
     override fun generateLessonInstanceId(): String =
         "${wordlist.random(random)} ${wordlist.random(random)}"
-            .also {
-                println(wordlist.maxByOrNull(String::length))
-            }
 }

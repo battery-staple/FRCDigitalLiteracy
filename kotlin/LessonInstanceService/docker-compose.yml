@@ -17,4 +17,5 @@ services:
     environment:
       - DATABASE_USERNAME=usr
       - DATABASE_PASSWORD=pwd
+      - GENERAL_SESSIONQUEUEURL=host.docker.internal
     restart: always

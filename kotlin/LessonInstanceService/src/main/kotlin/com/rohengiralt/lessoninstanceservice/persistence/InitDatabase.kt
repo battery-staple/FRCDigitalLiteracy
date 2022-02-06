@@ -12,7 +12,7 @@ import org.jetbrains.exposed.sql.addLogger
 import org.jetbrains.exposed.sql.transactions.transaction
 import java.sql.SQLException
 
-tailrec suspend fun initDatabase(tries: Int = 100) {
+tailrec suspend fun initDatabase(tries: Int = 600) {
     println("Trying to connect to database at ${databaseConfig[url]}")
 
     if(!connectToDatabase()) {
