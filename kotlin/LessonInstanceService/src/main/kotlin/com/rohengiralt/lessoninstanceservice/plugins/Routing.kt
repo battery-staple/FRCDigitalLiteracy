@@ -5,14 +5,18 @@ import com.rohengiralt.lessoninstanceservice.di.withKoin
 import com.rohengiralt.lessoninstanceservice.expirationhandler.ExpirationGenerator
 import com.rohengiralt.lessoninstanceservice.idgenerator.LessonInstanceIdGenerator
 import com.rohengiralt.lessoninstanceservice.persistence.table.LessonInstanceTable
+import com.rohengiralt.lessoninstanceservice.sessionqueue.SessionQueue
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.auth.*
 import io.ktor.server.auth.jwt.*
 import io.ktor.server.plugins.*
+import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
+import kotlinx.serialization.Serializable
 import org.koin.core.component.get
+import org.koin.core.component.inject
 
 fun Application.configureRouting() = withKoin {
     routing {
@@ -59,6 +63,27 @@ fun Application.configureRouting() = withKoin {
                             )
                         }
                     }
+
+                    route("/active") {
+                        post {
+                            val sessionQueue: SessionQueue by inject()
+                            sessionQueue.startLesson(call.getLessonInstanceId())
+                        }
+
+                        delete {
+                            val sessionQueue: SessionQueue by inject()
+                            sessionQueue.endLesson(call.getLessonInstanceId())
+                        }
+                    }
+
+                    route("/current-page") {
+                        put {
+                            val newPage = call.receiveOrNull<CurrentPage>()?.currentPage ?: throw BadRequestException("Missing page to set")
+                            val sessionQueue: SessionQueue by inject()
+
+                            sessionQueue.changePage(call.getLessonInstanceId(), newPage)
+                        }
+                    }
                 }
             }
         }
@@ -81,3 +106,6 @@ data class LessonInstanceCreator(
     val creatorId: String,
     val creatorIssuer: String,
 )
+
+@Serializable
+data class CurrentPage(val currentPage: UInt)
