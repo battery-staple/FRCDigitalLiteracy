@@ -3,7 +3,7 @@ package com.rohengiralt
 import io.ktor.http.*
 import kotlin.test.*
 import io.ktor.server.testing.*
-import com.rohengiralt.plugins.*
+import com.rohengiralt.lessoninstanceservice.plugins.*
 
 class ApplicationTest {
     @Test

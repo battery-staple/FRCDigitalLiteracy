@@ -1,6 +1,7 @@
-package com.rohengiralt
+package com.rohengiralt.lessoninstanceservice
 
-import com.rohengiralt.plugins.*
+import com.rohengiralt.ktorConfig.*
+import com.rohengiralt.lessoninstanceservice.plugins.configureRouting
 import com.typesafe.config.ConfigFactory
 import io.ktor.server.config.*
 import io.ktor.server.engine.*
@@ -16,8 +17,9 @@ fun main() {
             configureCallLogging()
             configureCORS()
             configureSecurity()
-            configureHTTP()
+            configureStatusPages()
             configureSerialization()
+//            configureHTTP()
             configureRouting()
         }
 
