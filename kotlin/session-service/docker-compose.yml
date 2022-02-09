@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  session-service:
+    build: .
+    ports:
+      - "8081:8081"
+    environment:
+      - GENERAL_SESSIONQUEUEURL=host.docker.internal
+      - GENERAL_LESSONINSTANCESERVICEURL=host.docker.internal:8080
+    restart: always
