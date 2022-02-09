@@ -1,11 +1,12 @@
 package com.rohengiralt.lessoninstanceservice.plugins
 
-import com.rohengiralt.ktorConfig.UnauthorizedException
-import com.rohengiralt.lessoninstanceservice.di.withKoin
 import com.rohengiralt.lessoninstanceservice.expiration.ExpirationGenerator
 import com.rohengiralt.lessoninstanceservice.id.LessonInstanceIdGenerator
 import com.rohengiralt.lessoninstanceservice.persistence.table.LessonInstanceTable
 import com.rohengiralt.lessoninstanceservice.sessionqueue.SessionQueue
+import com.rohengiralt.shared.di.withKoin
+import com.rohengiralt.shared.ktorConfig.UnauthorizedException
+import com.rohengiralt.shared.model.LessonInstanceId
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.auth.*
@@ -39,7 +40,7 @@ fun Application.configureRouting() = withKoin {
                             expiration = expiration
                         )
 
-                        call.respond(mapOf("lessonInstanceId" to lessonInstanceId))
+                        call.respond(LessonInstanceId(lessonInstanceId = lessonInstanceId))
                     }
                 }
 
@@ -103,7 +104,6 @@ fun Application.configureRouting() = withKoin {
 fun ApplicationCall.getLessonInstanceCreatorData(): LessonInstanceCreator = withKoin {
     val user = (authentication.principal as JWTPrincipal?) ?: throw UnauthorizedException()
     LessonInstanceCreator(
-
         creatorId = user.jwtId ?: throw BadRequestException("JWT missing user id"),
         creatorIssuer = user.issuer ?: throw BadRequestException("JWT missing user issuer"),
     )

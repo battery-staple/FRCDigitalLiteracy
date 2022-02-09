@@ -1,4 +1,4 @@
-package com.rohengiralt.lessoninstanceservice.di
+package com.rohengiralt.shared.di
 
 import org.koin.core.component.KoinComponent
 

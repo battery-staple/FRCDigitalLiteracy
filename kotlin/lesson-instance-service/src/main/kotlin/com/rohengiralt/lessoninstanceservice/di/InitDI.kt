@@ -1,3 +1,5 @@
+@file:Suppress("RemoveExplicitTypeArguments")
+
 package com.rohengiralt.lessoninstanceservice.di
 
 import com.rohengiralt.lessoninstanceservice.expiration.ExpirationGenerator

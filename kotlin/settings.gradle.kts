@@ -10,5 +10,6 @@
 rootProject.name = "kotlin"
 
 include(":shared")
-include(":lesson-instance-service")
 include(":session-shared")
+include(":lesson-instance-service")
+include(":session-service")

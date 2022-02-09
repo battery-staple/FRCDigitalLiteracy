@@ -1,4 +1,4 @@
-package com.rohengiralt.ktorConfig
+package com.rohengiralt.shared.ktorConfig
 
 import com.auth0.jwt.exceptions.JWTVerificationException
 import com.auth0.jwt.interfaces.Claim

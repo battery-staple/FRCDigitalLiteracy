@@ -1,4 +1,4 @@
-package com.rohengiralt.ktorConfig
+package com.rohengiralt.shared.ktorConfig
 
 import io.ktor.server.application.*
 import io.ktor.server.plugins.*

@@ -1,10 +1,10 @@
 package com.rohengiralt.lessoninstanceservice
 
-import com.rohengiralt.ktorConfig.*
 import com.rohengiralt.lessoninstanceservice.di.initDI
 import com.rohengiralt.lessoninstanceservice.expiration.expirationTask
 import com.rohengiralt.lessoninstanceservice.persistence.initDatabase
 import com.rohengiralt.lessoninstanceservice.plugins.configureRouting
+import com.rohengiralt.shared.ktorConfig.*
 import com.typesafe.config.ConfigFactory
 import io.ktor.server.config.*
 import io.ktor.server.engine.*

@@ -1,8 +1,10 @@
 val ktor_version: String by project
 val google_api_client_version: String by project
+val koin_version: String by project
 
 plugins {
     kotlin("jvm") version "1.6.10"
+    kotlin("plugin.serialization") version "1.6.10"
 }
 
 group = "com.rohengiralt"
@@ -25,4 +27,5 @@ dependencies {
     implementation("io.ktor:ktor-server-call-logging:$ktor_version")
     implementation("io.ktor:ktor-server-status-pages:$ktor_version")
     implementation("com.google.api-client:google-api-client:$google_api_client_version")
+    implementation("io.insert-koin:koin-core:$koin_version")
 }
