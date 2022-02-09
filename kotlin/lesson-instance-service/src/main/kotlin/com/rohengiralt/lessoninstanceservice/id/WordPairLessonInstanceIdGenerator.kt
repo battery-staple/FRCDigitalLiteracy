@@ -1,4 +1,4 @@
-package com.rohengiralt.lessoninstanceservice.idgenerator
+package com.rohengiralt.lessoninstanceservice.id
 
 import kotlinx.datetime.Clock
 import kotlin.random.Random

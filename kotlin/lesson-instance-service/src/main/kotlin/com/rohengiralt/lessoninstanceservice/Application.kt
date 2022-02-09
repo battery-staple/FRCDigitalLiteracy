@@ -2,6 +2,7 @@ package com.rohengiralt.lessoninstanceservice
 
 import com.rohengiralt.ktorConfig.*
 import com.rohengiralt.lessoninstanceservice.di.initDI
+import com.rohengiralt.lessoninstanceservice.expiration.expirationTask
 import com.rohengiralt.lessoninstanceservice.persistence.initDatabase
 import com.rohengiralt.lessoninstanceservice.plugins.configureRouting
 import com.typesafe.config.ConfigFactory
@@ -13,6 +14,7 @@ import org.slf4j.LoggerFactory
 suspend fun main() {
     initDI()
     initDatabase()
+    expirationTask()
 
     embeddedServer(Netty, environment = applicationEngineEnvironment {
         log = LoggerFactory.getLogger("ktor.application")

@@ -1,5 +1,6 @@
 package com.rohengiralt.lessoninstanceservice.persistence.table
 
+import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import org.jetbrains.exposed.sql.*
 import org.jetbrains.exposed.sql.kotlin.datetime.timestamp
@@ -45,5 +46,10 @@ object LessonInstanceTable : Table() {
             }
             query
         }
+    }
+
+    fun deleteExpiredInstances() = transaction {
+        val now = Clock.System.now()
+        deleteWhere { expiration lessEq now }
     }
 }

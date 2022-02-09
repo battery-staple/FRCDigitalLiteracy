@@ -1,4 +1,4 @@
-package com.rohengiralt.lessoninstanceservice.expirationhandler
+package com.rohengiralt.lessoninstanceservice.expiration
 
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant

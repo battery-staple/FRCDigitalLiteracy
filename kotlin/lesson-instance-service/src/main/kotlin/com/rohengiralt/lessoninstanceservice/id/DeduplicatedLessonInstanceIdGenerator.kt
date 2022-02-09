@@ -1,4 +1,4 @@
-package com.rohengiralt.lessoninstanceservice.idgenerator
+package com.rohengiralt.lessoninstanceservice.id
 
 import com.rohengiralt.lessoninstanceservice.persistence.table.LessonInstanceTable
 import org.jetbrains.exposed.sql.select

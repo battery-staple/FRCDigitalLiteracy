@@ -1,4 +1,4 @@
-package com.rohengiralt.lessoninstanceservice.idgenerator
+package com.rohengiralt.lessoninstanceservice.id
 
 interface LessonInstanceIdGenerator {
     fun generateLessonInstanceId(): String
