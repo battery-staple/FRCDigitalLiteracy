@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/MediaPedia/static/css/main.b75557fc.css",
+    "main.js": "/MediaPedia/static/js/main.c44289ad.js",
+    "static/css/43.609dd787.chunk.css": "/MediaPedia/static/css/43.609dd787.chunk.css",
+    "static/js/43.c99581e2.chunk.js": "/MediaPedia/static/js/43.c99581e2.chunk.js",
+    "static/css/779.ed285f0d.chunk.css": "/MediaPedia/static/css/779.ed285f0d.chunk.css",
+    "static/js/779.98941911.chunk.js": "/MediaPedia/static/js/779.98941911.chunk.js",
+    "static/js/787.cda612ba.chunk.js": "/MediaPedia/static/js/787.cda612ba.chunk.js",
+    "static/js/904.62d7700a.chunk.js": "/MediaPedia/static/js/904.62d7700a.chunk.js",
+    "static/media/highlight.png": "/MediaPedia/static/media/highlight.1616429fd932f5ebc043.png",
+    "static/media/think.png": "/MediaPedia/static/media/think.e2c36224e6f78f3cd7c0.png",
+    "index.html": "/MediaPedia/index.html",
+    "main.b75557fc.css.map": "/MediaPedia/static/css/main.b75557fc.css.map",
+    "main.c44289ad.js.map": "/MediaPedia/static/js/main.c44289ad.js.map",
+    "43.609dd787.chunk.css.map": "/MediaPedia/static/css/43.609dd787.chunk.css.map",
+    "43.c99581e2.chunk.js.map": "/MediaPedia/static/js/43.c99581e2.chunk.js.map",
+    "779.ed285f0d.chunk.css.map": "/MediaPedia/static/css/779.ed285f0d.chunk.css.map",
+    "779.98941911.chunk.js.map": "/MediaPedia/static/js/779.98941911.chunk.js.map",
+    "787.cda612ba.chunk.js.map": "/MediaPedia/static/js/787.cda612ba.chunk.js.map",
+    "904.62d7700a.chunk.js.map": "/MediaPedia/static/js/904.62d7700a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b75557fc.css",
+    "static/js/main.c44289ad.js"
+  ]
+}
